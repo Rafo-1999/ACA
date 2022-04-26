@@ -1,17 +1,41 @@
 package com.vehicle;
 
 public class Vehicle {
-    protected int maxSpeed;
-    protected double maxWeight;
-    protected int enginePower;
-    protected float engineVolume;
-    protected String vinCode;
-    protected int sitCount;
-    protected short yearOfProduction;
-    protected String brand;
-    protected String mark;
-    protected String color;
-//testAM
+    private int maxSpeed;
+    private double maxWeight;
+    private int enginePower;
+    private float engineVolume;
+    private String vinCode;
+    private int sitCount;
+    private short yearOfProduction;
+    private String brand;
+    private String mark;
+    //OwnerPassportNumber need to add object
+    private String color;
+
+    public enum FuelType{
+        Gas,Petrol,Diesel,Electricity
+    }
+    public enum SubType{
+        Truck,Passenger,Military
+    }
+
+//    public Vehicle(){
+//
+//    }
+
+    public Vehicle(int maxSpeed, double maxWeight, int enginePower, float engineVolume, String vinCode, int sitCount, short yearOfProduction, String brand, String mark, String color) {
+        this.maxSpeed = maxSpeed;
+        this.maxWeight = maxWeight;
+        this.enginePower = enginePower;
+        this.engineVolume = engineVolume;
+        this.vinCode = vinCode;
+        this.sitCount = sitCount;
+        this.yearOfProduction = yearOfProduction;
+        this.brand = brand;
+        this.mark = mark;
+        this.color = color;
+    }
 
     public int getMaxSpeed() {
         return maxSpeed;
@@ -91,5 +115,9 @@ public class Vehicle {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Test AM");
     }
 }
