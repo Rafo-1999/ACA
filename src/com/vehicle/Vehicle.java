@@ -11,7 +11,7 @@ public class Vehicle {
     protected String brand;
     protected String mark;
     protected String color;
-
+//testAM
 
     public int getMaxSpeed() {
         return maxSpeed;
