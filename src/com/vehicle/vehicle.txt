@@ -1,3 +1,1 @@
-name= valod,wheelCount=0, airPressure=4.7, numberPlate=77977.0, maxSpeed=250, maxWeight=0.0, enginePower=0, engineVolume=0.0, vinCode='null', sitCount=0, yearOfProduction=0, brand='null', mark='Lexus', color='null
-wheelCount=0, airPressure=4.7, numberPlate=77977.0, maxSpeed=250, maxWeight=0.0, enginePower=0, engineVolume=0.0, vinCode='null', sitCount=0, yearOfProduction=0, brand='null', mark='Lexus', color='null
-wheelCount=0, airPressure=4.7, numberPlate=77977.0, maxSpeed=250, maxWeight=0.0, enginePower=0, engineVolume=0.0, vinCode='null', sitCount=0, yearOfProduction=0, brand='null', mark='Lexus', color='null
+Car{wheelCount=0, airPressure=0.0, numberPlate=null, startStop='null', maxSpeed=0, maxWeight=0.0, enginePower=0, engineVolume=0.0, vinCode='null', sitCount=0, yearOfProduction=0, brand='mercedes', mark='null', color='null'}

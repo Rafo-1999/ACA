@@ -8,7 +8,7 @@ import java.nio.file.StandardOpenOption;
 import static java.nio.file.StandardOpenOption.*;
 
 public interface Action {
-//logika
+//logic
 
     static void addLandVehicle(LandVehicle landVehicle) {
         Path txtFilePath = Path.of("/home/rafo/IdeaProjects/LandVehicle/src/com/vehicle/vehicle.txt");

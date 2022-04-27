@@ -1,38 +1,55 @@
 package com.vehicle;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
 public class Car extends LandVehicle  {
     private int wheelCount;
     private double airPressure;
-    private double numberPlate;
+    private String numberPlate;
+
+    private String startStop;
+
+    public Car(int maxSpeed, double maxWeight, int enginePower, float engineVolume,String brand) {
+        super(brand);
+    }
+
+    public Car(String brand) {
+        super(brand);
+    }
 
 
     @Override
     public int wheelCount() {
-        return wheelCount;
+        return 0;
     }
 
     @Override
     public double airPressure() {
-        return airPressure;
+        return 0;
     }
 
     @Override
     public double numberPlate() {
-        return numberPlate;
+        return 0;
     }
-
-
-
-
 
 
     @Override
     public String toString() {
-        return "wheelCount=%d, airPressure=%s, numberPlate=%s, maxSpeed=%d, maxWeight=%s, enginePower=%d, engineVolume=%s, vinCode='%s', sitCount=%d, yearOfProduction=%s, brand='%s', mark='%s', color='%s".formatted(wheelCount, airPressure, numberPlate, maxSpeed, maxWeight, enginePower, engineVolume, vinCode, sitCount, yearOfProduction, brand, mark, color);
+        return "Car{" +
+                "wheelCount=" + wheelCount +
+                ", airPressure=" + airPressure +
+                ", numberPlate=" + numberPlate +
+                ", startStop='" + startStop + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                ", maxWeight=" + maxWeight +
+                ", enginePower=" + enginePower +
+                ", engineVolume=" + engineVolume +
+                ", vinCode='" + vinCode + '\'' +
+                ", sitCount=" + sitCount +
+                ", yearOfProduction=" + yearOfProduction +
+                ", brand='" + brand + '\'' +
+                ", mark='" + mark + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 
     public int getWheelCount() {
@@ -51,11 +68,21 @@ public class Car extends LandVehicle  {
         this.airPressure = airPressure;
     }
 
-    public double getNumberPlate() {
+    public String getNumberPlate() {
         return numberPlate;
     }
 
-    public void setNumberPlate(double numberPlate) {
+    public void setNumberPlate(String numberPlate) {
         this.numberPlate = numberPlate;
     }
+
+    public String getStartStop(String startStop) {
+        return this.startStop;
+    }
+
+    public void setStartStop(String startStop) {
+        this.startStop = startStop;
+    }
+
+
 }

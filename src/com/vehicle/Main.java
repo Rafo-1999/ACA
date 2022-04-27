@@ -1,14 +1,20 @@
 package com.vehicle;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Car car = new Car();
-        car.setAirPressure(4.7);
-        car.setNumberPlate(77977);
-        car.setMaxSpeed(250);
-        car.setMark("Lexus");
-        Action.addLandVehicle(car);
+        CarService carService = new CarService();
+        carService.addCar();
+
+
+//        Motorcycle motorcycle = new Motorcycle();
+//        motorcycle.setHelmet("OFF-Road");
+//        motorcycle.setNumberPlate("AA977");
+//        Action.addLandVehicle(motorcycle);
+//
+
     }
 }
