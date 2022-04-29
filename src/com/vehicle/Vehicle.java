@@ -1,5 +1,6 @@
 package com.vehicle;
 
+
 public class Vehicle {
     private int maxSpeed;
     private double maxWeight;
@@ -10,21 +11,12 @@ public class Vehicle {
     private short yearOfProduction;
     private String brand;
     private String mark;
-    //OwnerPassportNumber need to add object
+    private Passport ownerPassportNumber;
     private String color;
+    public FuelType fuelType;
+    public SubType subType;
 
-    public enum FuelType{
-        Gas,Petrol,Diesel,Electricity
-    }
-    public enum SubType{
-        Truck,Passenger,Military
-    }
-
-//    public Vehicle(){
-//
-//    }
-
-    public Vehicle(int maxSpeed, double maxWeight, int enginePower, float engineVolume, String vinCode, int sitCount, short yearOfProduction, String brand, String mark, String color) {
+    public Vehicle(int maxSpeed, double maxWeight, int enginePower, float engineVolume, String vinCode, int sitCount, short yearOfProduction, String brand, String mark, Passport ownerPassportNumber, String color, FuelType fuelType, SubType subType) {
         this.maxSpeed = maxSpeed;
         this.maxWeight = maxWeight;
         this.enginePower = enginePower;
@@ -34,7 +26,10 @@ public class Vehicle {
         this.yearOfProduction = yearOfProduction;
         this.brand = brand;
         this.mark = mark;
+        this.ownerPassportNumber = ownerPassportNumber;
         this.color = color;
+        this.fuelType = fuelType;
+        this.subType = subType;
     }
 
     public int getMaxSpeed() {
@@ -117,7 +112,21 @@ public class Vehicle {
         this.color = color;
     }
 
+    public Passport getOwnerPassportNumber() {
+        return ownerPassportNumber;
+    }
+
+    public void setOwnerPassportNumber(Passport ownerPassportNumber) {
+        this.ownerPassportNumber = ownerPassportNumber;
+    }
+
     public static void main(String[] args) {
-        System.out.println("Test AM");
+        System.out.println("testam");
+
+        String version = "v1";
+        String newVersion = "v" + (Integer.parseInt(version.substring(1,version.length()))+100);
+        System.out.println(newVersion);
+
+
     }
 }
