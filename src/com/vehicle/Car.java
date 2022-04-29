@@ -7,14 +7,21 @@ public class Car extends LandVehicle  {
 
     private String startStop;
 
-    public Car(int maxSpeed, double maxWeight, int enginePower, float engineVolume,String brand) {
-        super(brand);
+    public Car(int maxSpeed, double maxWeight, int enginePower, float engineVolume, String vinCode,
+               int sitCount, short yearOfProduction, String brand, String mark, Passport ownerPassportNumber,
+               String color, FuelType fuelType, SubType subType, int wheelCount, double airPressure,
+               String numberPlate, String startStop) {
+        super(maxSpeed, maxWeight, enginePower, engineVolume, vinCode, sitCount, yearOfProduction, brand,
+                mark, ownerPassportNumber, color, fuelType, subType);
+        this.wheelCount = wheelCount;
+        this.airPressure = airPressure;
+        this.numberPlate = numberPlate;
+        this.startStop = startStop;
     }
 
-    public Car(String brand) {
-        super(brand);
+    public Car() {
+        super();
     }
-
 
     @Override
     public int wheelCount() {
@@ -37,18 +44,10 @@ public class Car extends LandVehicle  {
         return "Car{" +
                 "wheelCount=" + wheelCount +
                 ", airPressure=" + airPressure +
-                ", numberPlate=" + numberPlate +
+                ", numberPlate='" + numberPlate + '\'' +
                 ", startStop='" + startStop + '\'' +
-                ", maxSpeed=" + maxSpeed +
-                ", maxWeight=" + maxWeight +
-                ", enginePower=" + enginePower +
-                ", engineVolume=" + engineVolume +
-                ", vinCode='" + vinCode + '\'' +
-                ", sitCount=" + sitCount +
-                ", yearOfProduction=" + yearOfProduction +
-                ", brand='" + brand + '\'' +
-                ", mark='" + mark + '\'' +
-                ", color='" + color + '\'' +
+                ", fuelType=" + fuelType +
+                ", subType=" + subType +
                 '}';
     }
 

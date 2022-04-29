@@ -9,9 +9,6 @@ public class Motorcycle extends LandVehicle{
 
     private String  helmet;
 
-    public Motorcycle(String brand) {
-        super(brand);
-    }
 
     @Override
     public int wheelCount() {
@@ -65,18 +62,10 @@ public class Motorcycle extends LandVehicle{
         return "Motorcycle{" +
                 "wheelCount=" + wheelCount +
                 ", airPressure=" + airPressure +
-                ", numberPlate=" + numberPlate +
+                ", numberPlate='" + numberPlate + '\'' +
                 ", helmet='" + helmet + '\'' +
-                ", maxSpeed=" + maxSpeed +
-                ", maxWeight=" + maxWeight +
-                ", enginePower=" + enginePower +
-                ", engineVolume=" + engineVolume +
-                ", vinCode='" + vinCode + '\'' +
-                ", sitCount=" + sitCount +
-                ", yearOfProduction=" + yearOfProduction +
-                ", brand='" + brand + '\'' +
-                ", mark='" + mark + '\'' +
-                ", color='" + color + '\'' +
+                ", fuelType=" + fuelType +
+                ", subType=" + subType +
                 '}';
     }
 }

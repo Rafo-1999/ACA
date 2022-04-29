@@ -1,7 +1,7 @@
 package com.vehicle;
 
 
-public class Vehicle {
+public abstract class Vehicle {
     private int maxSpeed;
     private double maxWeight;
     private int enginePower;
@@ -13,11 +13,13 @@ public class Vehicle {
     private String mark;
     private Passport ownerPassportNumber;
     private String color;
-    public FuelType fuelType;
-    public SubType subType;
+    public static FuelType fuelType;
+    public static SubType subType;
 
-    public Vehicle(int maxSpeed, double maxWeight, int enginePower, float engineVolume, String vinCode, int sitCount, short yearOfProduction, String brand, String mark, Passport ownerPassportNumber, String color, FuelType fuelType, SubType subType) {
-    public Vehicle(int maxSpeed, double maxWeight, int enginePower, float engineVolume, String vinCode, int sitCount, short yearOfProduction, String brand, String mark, String color) {
+    public Vehicle(int maxSpeed, double maxWeight, int enginePower, float engineVolume, String vinCode, int sitCount,
+                   short yearOfProduction, String brand, String mark, Passport ownerPassportNumber,
+                   String color, FuelType fuelType, SubType subType) {
+
         this.maxSpeed = maxSpeed;
         this.maxWeight = maxWeight;
         this.enginePower = enginePower;
@@ -32,6 +34,12 @@ public class Vehicle {
         this.fuelType = fuelType;
         this.subType = subType;
     }
+
+    public Vehicle() {
+
+    }
+
+
 
     public int getMaxSpeed() {
         return maxSpeed;
@@ -94,6 +102,7 @@ public class Vehicle {
     }
 
     public void setBrand(String brand) {
+
         this.brand = brand;
     }
 

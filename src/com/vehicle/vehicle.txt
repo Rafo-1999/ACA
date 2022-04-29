@@ -1,1 +1,1 @@
-Car{wheelCount=0, airPressure=0.0, numberPlate=null, startStop='null', maxSpeed=0, maxWeight=0.0, enginePower=0, engineVolume=0.0, vinCode='null', sitCount=0, yearOfProduction=0, brand='mercedes', mark='null', color='null'}
+Car{wheelCount=0, airPressure=0.0, numberPlate='null', startStop='null', fuelType=null, subType=null}
