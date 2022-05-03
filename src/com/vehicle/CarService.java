@@ -1,41 +1,78 @@
 package com.vehicle;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Scanner;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.nio.file.StandardOpenOption.APPEND;
 
 public class CarService {
-//addCar
-    //removeCar
-    //printall  petqa tpel bolor carrer y
-
-    public void addCar() throws IOException {
-        System.out.println("Input car numberPlate");
-        Scanner scanner=new Scanner(System.in);
-        String numberPlate =scanner.nextLine();
 
 
-        Car car = new Car();
-     Path addPath=Path.of("/home/rafo/IdeaProjects/LandVehicle/src/com/vehicle/vehicle.txt");
-//        FileWriter myWriter = new FileWriter("/home/rafo/IdeaProjects/LandVehicle/src/com/vehicle/vehicle.txt",true);
+    private static final String CAR_FILE_PATH = "CarFile";
+    public void addCar(Car car) throws IOException {
 
+       Path addPath = Path.of(CAR_FILE_PATH);
         try {
-          //  myWriter.write(String.valueOf(car));
-            Files.writeString(addPath, car.toString()+"\n", APPEND);
+            Files.writeString(addPath, car.toString() + "\n", APPEND);
 
         } catch (IOException e) {
-            throw new RuntimeException("error");
+            throw new RuntimeException("error add car" + e.getMessage());
         }
     }
 
-    public  void removeCar(){
-        System.out.println("Delete car model");
-        Scanner scanner =new Scanner(System.in);
-        String brand = scanner.nextLine();
 
-        Car car = new Car();
+
+
+    public void removeCar(Car car)  {
+        Path removePath = Path.of(CAR_FILE_PATH);
+
+        try {
+            List<String> tmp = Files.readAllLines(removePath);
+
+            Files.delete(removePath);
+            Files.createFile(removePath);
+
+            if (tmp.remove(car.toString())) {
+
+                for (String carString : tmp) {
+                    Files.writeString(removePath, carString+"\n", APPEND);
+                }
+            }else {
+                System.out.println("Can't remove car. Car not fount");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("remove error" + e.getMessage());
+        }
     }
+
+    public void printAll(){
+        Path path = Path.of(CAR_FILE_PATH);
+
+        try {
+            String content = Files.readString(path);
+
+            System.out.println();
+            System.out.println("-----");
+            System.out.println(content);
+            System.out.println("----");
+            System.out.println();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
+
+
+
+
+
+
+

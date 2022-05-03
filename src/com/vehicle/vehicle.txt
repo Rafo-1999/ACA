@@ -1,1 +1,0 @@
-Car{wheelCount=0, airPressure=0.0, numberPlate='null', startStop='null', fuelType=null, subType=null}

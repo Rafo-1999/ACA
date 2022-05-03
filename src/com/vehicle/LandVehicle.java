@@ -1,6 +1,6 @@
 package com.vehicle;
 
-public abstract class LandVehicle extends Vehicle  implements LandVehicleService{
+public abstract class LandVehicle extends Vehicle  {
 
 
         public LandVehicle() {
@@ -9,6 +9,8 @@ public abstract class LandVehicle extends Vehicle  implements LandVehicleService
 
         public abstract int wheelCount();
         public abstract double airPressure();
+
+        public abstract String numberPlate();
 
         public LandVehicle(int maxSpeed, double maxWeight, int enginePower, float engineVolume, String vinCode,
                            int sitCount, short yearOfProduction, String brand, String mark, Passport ownerPassportNumber,

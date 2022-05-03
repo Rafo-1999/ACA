@@ -1,37 +1,36 @@
 package com.vehicle;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        Car bmw = new Car();
+        bmw.setBrand("bmw");
+        bmw.setWheelCount(4);
+        bmw.setMark("i750");
+        bmw.setMaxSpeed(370);
+        bmw.setMaxWeight(1245.7);
+        bmw.setEnginePower(400);
+
+        Car audi = new Car();
+        audi.setBrand("Audi");
+        audi.setWheelCount(4);
+        audi.setMark("R8");
+        audi.setMaxSpeed(300);
+        audi.setMaxWeight(1545.7);
+        audi.setEnginePower(280);
+
         CarService carService = new CarService();
-        carService.addCar();
+        carService.addCar(bmw);
+        carService.addCar(audi);
 
-        LandVehicle landVehicle= new LandVehicle() {
-            @Override
-            public double numberPlate() {
-                return 0;
-            }
+        carService.printAll();
 
-            @Override
-            public int wheelCount() {
-                return 0;
-            }
-
-            @Override
-            public double airPressure() {
-                return 0;
-            }
-        };
-
-
-//        Motorcycle motorcycle = new Motorcycle();
-//        motorcycle.setHelmet("OFF-Road");
-//        motorcycle.setNumberPlate("AA977");
-//        Action.addLandVehicle(motorcycle);
-//
+        carService.removeCar(bmw);
+        carService.printAll();
 
     }
 }

@@ -1,6 +1,8 @@
 package com.vehicle;
 
 public class Car extends LandVehicle  {
+
+
     private int wheelCount;
     private double airPressure;
     private String numberPlate;
@@ -23,6 +25,7 @@ public class Car extends LandVehicle  {
         super();
     }
 
+
     @Override
     public int wheelCount() {
         return 0;
@@ -34,20 +37,29 @@ public class Car extends LandVehicle  {
     }
 
     @Override
-    public double numberPlate() {
-        return 0;
+    public String numberPlate() {
+        return null;
     }
 
 
     @Override
     public String toString() {
         return "Car{" +
-                "wheelCount=" + wheelCount +
+                "maxSpeed=" + super.getMaxSpeed() +
+                ", maxWeight=" + super.getMaxWeight() +
+                ", enginePower=" + super.getEnginePower() +
+                ", engineVolume=" + super.getEngineVolume() +
+                ", vinCode='" + super.getVinCode() + '\'' +
+                ", sitCount=" + super.getSitCount() +
+                ", yearOfProduction=" + super.getYearOfProduction() +
+                ", brand='" + super.getBrand() + '\'' +
+                ", mark='" + super.getMark() + '\'' +
+                //  ", ownerPassportNumber=" + super.getOwnerPassportNumber().toString() +
+                ", color='" + super.getColor() + '\'' +
+                ", wheelCount=" + wheelCount +
                 ", airPressure=" + airPressure +
                 ", numberPlate='" + numberPlate + '\'' +
                 ", startStop='" + startStop + '\'' +
-                ", fuelType=" + fuelType +
-                ", subType=" + subType +
                 '}';
     }
 
@@ -55,24 +67,27 @@ public class Car extends LandVehicle  {
         return wheelCount;
     }
 
-    public void setWheelCount(int wheelCount) {
+    public String setWheelCount(int wheelCount) {
         this.wheelCount = wheelCount;
+        return null;
     }
 
     public double getAirPressure() {
         return airPressure;
     }
 
-    public void setAirPressure(double airPressure) {
+    public String setAirPressure(double airPressure) {
         this.airPressure = airPressure;
+        return null;
     }
 
     public String getNumberPlate() {
         return numberPlate;
     }
 
-    public void setNumberPlate(String numberPlate) {
+    public String setNumberPlate(String numberPlate) {
         this.numberPlate = numberPlate;
+        return numberPlate;
     }
 
     public String getStartStop(String startStop) {
